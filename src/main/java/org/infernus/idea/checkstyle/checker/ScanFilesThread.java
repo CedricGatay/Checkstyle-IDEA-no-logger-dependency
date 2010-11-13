@@ -1,18 +1,16 @@
 package org.infernus.idea.checkstyle.checker;
 
+import com.intellij.codeInspection.ProblemDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
-import com.intellij.codeInspection.ProblemDescriptor;
+import org.apache.log4j.Logger;
+import org.infernus.idea.checkstyle.CheckStylePlugin;
+import org.infernus.idea.checkstyle.exception.CheckStylePluginException;
+import org.jetbrains.annotations.NonNls;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Map;
-import java.lang.reflect.InvocationTargetException;
-
-import org.jetbrains.annotations.NonNls;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.infernus.idea.checkstyle.exception.CheckStylePluginException;
-import org.infernus.idea.checkstyle.CheckStylePlugin;
 
 public class ScanFilesThread extends AbstractCheckerThread {
 
@@ -20,7 +18,7 @@ public class ScanFilesThread extends AbstractCheckerThread {
      * Logger for this class.
      */
     @NonNls
-    private static final Log LOG = LogFactory.getLog(ScanFilesThread.class);
+    private static final Logger LOG = Logger.getLogger(ScanFilesThread.class);
 
     /**
      * Scan Files and store results.

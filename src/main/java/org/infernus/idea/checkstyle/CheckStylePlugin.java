@@ -23,8 +23,7 @@ import com.intellij.openapi.wm.ToolWindowType;
 import com.intellij.psi.PsiFile;
 import com.intellij.ui.content.Content;
 import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.checker.AbstractCheckerThread;
 import org.infernus.idea.checkstyle.checker.CheckFilesThread;
 import org.infernus.idea.checkstyle.checker.CheckerFactory;
@@ -38,12 +37,18 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Main class for the CheckStyle static scanning plug-n.
@@ -66,7 +71,7 @@ public final class CheckStylePlugin extends CheckinHandlerFactory implements Pro
      * Logger for this class.
      */
     @NonNls
-    private static final Log LOG = LogFactory.getLog(CheckStylePlugin.class);
+    private static final Logger LOG = Logger.getLogger(CheckStylePlugin.class);
 
     /**
      * Any threads in progress.

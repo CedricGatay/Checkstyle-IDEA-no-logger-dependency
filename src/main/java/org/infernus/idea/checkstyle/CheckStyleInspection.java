@@ -16,8 +16,7 @@ import com.intellij.psi.codeStyle.CodeStyleSettings;
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager;
 import com.puppycrawl.tools.checkstyle.Checker;
 import com.puppycrawl.tools.checkstyle.api.Configuration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.checker.CheckStyleAuditListener;
 import org.infernus.idea.checkstyle.checker.CheckerFactory;
 import org.infernus.idea.checkstyle.checks.Check;
@@ -32,7 +31,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.JComponent;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -53,7 +52,7 @@ public class CheckStyleInspection extends LocalInspectionTool {
     /**
      * Logger for this class.
      */
-    private static final Log LOG = LogFactory.getLog(
+    private static final Logger LOG = Logger.getLogger(
             CheckStyleInspection.class);
 
     /**

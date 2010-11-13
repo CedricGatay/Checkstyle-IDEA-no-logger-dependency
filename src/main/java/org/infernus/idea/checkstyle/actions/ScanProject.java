@@ -8,8 +8,7 @@ import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowManager;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.CheckStyleConstants;
 import org.infernus.idea.checkstyle.CheckStylePlugin;
 import org.infernus.idea.checkstyle.exception.CheckStylePluginException;
@@ -28,7 +27,7 @@ public class ScanProject extends BaseAction {
     /**
      * Logger for this class.
      */
-    private static final Log LOG = LogFactory.getLog(
+    private static final Logger LOG = Logger.getLogger(
             ScanProject.class);
 
     /**

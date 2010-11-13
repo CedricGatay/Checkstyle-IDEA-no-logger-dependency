@@ -1,8 +1,7 @@
 package org.infernus.idea.checkstyle;
 
 import com.intellij.openapi.module.Module;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.model.ConfigurationLocation;
 import org.infernus.idea.checkstyle.model.ConfigurationLocationFactory;
 import org.jetbrains.annotations.NonNls;
@@ -19,7 +18,7 @@ import java.util.Properties;
 public final class CheckStyleModuleConfiguration extends Properties {
 
     @NonNls
-    private static final Log LOG = LogFactory.getLog(CheckStyleModuleConfiguration.class);
+    private static final Logger LOG = Logger.getLogger(CheckStyleModuleConfiguration.class);
 
     private static final long serialVersionUID = 2804470793153632480L;
 

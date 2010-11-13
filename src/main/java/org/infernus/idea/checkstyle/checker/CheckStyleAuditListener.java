@@ -10,12 +10,15 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.puppycrawl.tools.checkstyle.api.AuditEvent;
 import com.puppycrawl.tools.checkstyle.api.AuditListener;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.checks.Check;
 import org.infernus.idea.checkstyle.util.ExtendedProblemDescriptor;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Listener for the CheckStyle process.
@@ -25,7 +28,7 @@ import java.util.*;
  */
 public class CheckStyleAuditListener implements AuditListener {
 
-    private static final Log LOG = LogFactory.getLog(
+    private static final Logger LOG = Logger.getLogger(
             CheckStyleAuditListener.class);
 
     private final boolean usingExtendedDescriptors;

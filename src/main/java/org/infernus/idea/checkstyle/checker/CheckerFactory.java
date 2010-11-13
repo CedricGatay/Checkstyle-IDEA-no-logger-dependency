@@ -9,8 +9,7 @@ import com.puppycrawl.tools.checkstyle.DefaultConfiguration;
 import com.puppycrawl.tools.checkstyle.PropertyResolver;
 import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
 import com.puppycrawl.tools.checkstyle.api.Configuration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.model.ConfigurationLocation;
 import org.infernus.idea.checkstyle.util.IDEAUtilities;
 
@@ -34,7 +33,7 @@ public class CheckerFactory {
     /**
      * Logger for this class.
      */
-    private static final Log LOG = LogFactory.getLog(
+    private static final Logger LOG = Logger.getLogger(
             CheckerFactory.class);
 
     /**

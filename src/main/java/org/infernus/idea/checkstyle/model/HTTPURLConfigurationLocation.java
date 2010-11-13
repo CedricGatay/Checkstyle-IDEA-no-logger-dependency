@@ -1,10 +1,18 @@
 package org.infernus.idea.checkstyle.model;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.Writer;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -14,7 +22,7 @@ import java.net.URLConnection;
 public class HTTPURLConfigurationLocation extends ConfigurationLocation {
 
     @NonNls
-    private static final Log LOG = LogFactory.getLog(HTTPURLConfigurationLocation.class);
+    private static final Logger LOG = Logger.getLogger(HTTPURLConfigurationLocation.class);
 
     /**
      * Create a new URL configuration.

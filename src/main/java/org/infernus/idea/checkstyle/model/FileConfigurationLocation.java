@@ -2,8 +2,7 @@ package org.infernus.idea.checkstyle.model;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.CheckStyleConstants;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -19,7 +18,7 @@ import java.io.InputStream;
 public class FileConfigurationLocation extends ConfigurationLocation {
 
     @NonNls
-    private static final Log LOG = LogFactory.getLog(FileConfigurationLocation.class);
+    private static final Logger LOG = Logger.getLogger(FileConfigurationLocation.class);
 
     private final Project project;
 

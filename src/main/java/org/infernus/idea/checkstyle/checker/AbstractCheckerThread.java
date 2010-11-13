@@ -6,8 +6,7 @@ import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.CheckStylePlugin;
 
 import java.lang.reflect.InvocationTargetException;
@@ -21,7 +20,7 @@ import java.util.Map;
  */
 public abstract class AbstractCheckerThread extends Thread {
 
-    private static final Log LOG = LogFactory.getLog(AbstractCheckerThread.class);
+    private static final Logger LOG = Logger.getLogger(AbstractCheckerThread.class);
 
     /**
      * Files to scan.

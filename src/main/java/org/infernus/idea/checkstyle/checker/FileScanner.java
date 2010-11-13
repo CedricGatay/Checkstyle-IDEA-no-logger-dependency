@@ -11,8 +11,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.puppycrawl.tools.checkstyle.Checker;
 import com.puppycrawl.tools.checkstyle.api.Configuration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.CheckStyleModulePlugin;
 import org.infernus.idea.checkstyle.CheckStylePlugin;
 import org.infernus.idea.checkstyle.checks.Check;
@@ -24,7 +23,12 @@ import org.jetbrains.annotations.NonNls;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Runnable for scanning an individual file.
@@ -41,7 +45,7 @@ final class FileScanner implements Runnable {
      * Logger for this class.
      */
     @NonNls
-    private static final Log LOG = LogFactory.getLog(FileScanner.class);
+    private static final Logger LOG = Logger.getLogger(FileScanner.class);
 
     /**
      * Create a new file scanner.

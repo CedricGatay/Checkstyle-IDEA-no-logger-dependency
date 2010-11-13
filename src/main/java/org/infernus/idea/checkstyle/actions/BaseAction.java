@@ -8,12 +8,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.CheckStyleConstants;
 import org.infernus.idea.checkstyle.CheckStylePlugin;
-import org.infernus.idea.checkstyle.toolwindow.ToolWindowPanel;
 import org.infernus.idea.checkstyle.exception.CheckStylePluginException;
+import org.infernus.idea.checkstyle.toolwindow.ToolWindowPanel;
 
 import java.util.ResourceBundle;
 
@@ -28,7 +27,7 @@ public abstract class BaseAction extends AnAction {
     /**
      * Logger for this class.
      */
-    private static final Log LOG = LogFactory.getLog(
+    private static final Logger LOG = Logger.getLogger(
             BaseAction.class);
 
     /**

@@ -7,14 +7,14 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleComponent;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.infernus.idea.checkstyle.util.IDEAUtilities;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.ui.CheckStyleModuleConfigPanel;
+import org.infernus.idea.checkstyle.util.IDEAUtilities;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +36,7 @@ public class CheckStyleModulePlugin implements ModuleComponent, Configurable,
         PersistentStateComponent<CheckStyleModulePlugin.ConfigurationBean> {
 
     @NonNls
-    private static final Log LOG = LogFactory.getLog(CheckStyleModulePlugin.class);
+    private static final Logger LOG = Logger.getLogger(CheckStyleModulePlugin.class);
 
     private CheckStyleModuleConfiguration configuration;
     private Module module;

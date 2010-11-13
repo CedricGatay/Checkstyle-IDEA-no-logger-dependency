@@ -1,7 +1,6 @@
 package org.infernus.idea.checkstyle.util;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
@@ -23,7 +22,7 @@ public class CheckStyleEntityResolver implements EntityResolver {
     /**
      * Logger for this class.
      */
-    private static final Log LOG = LogFactory.getLog(
+    private static final Logger LOG = Logger.getLogger(
             CheckStyleEntityResolver.class);
 
     private static final Map<DTDKey, String> DTD_MAP

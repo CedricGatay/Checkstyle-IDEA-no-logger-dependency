@@ -4,13 +4,12 @@ import com.intellij.codeInspection.ProblemDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.infernus.idea.checkstyle.exception.CheckStylePluginException;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.CheckStylePlugin;
+import org.infernus.idea.checkstyle.exception.CheckStylePluginException;
 import org.jetbrains.annotations.NonNls;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +20,7 @@ public class CheckFilesThread extends AbstractCheckerThread {
      * Logger for this class.
      */
     @NonNls
-    private static final Log LOG = LogFactory.getLog(CheckFilesThread.class);
+    private static final Logger LOG = Logger.getLogger(CheckFilesThread.class);
 
     /**
      * Create a thread to check the given files.

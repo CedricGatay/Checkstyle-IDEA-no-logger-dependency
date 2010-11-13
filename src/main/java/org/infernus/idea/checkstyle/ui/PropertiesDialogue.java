@@ -3,16 +3,28 @@ package org.infernus.idea.checkstyle.ui;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.wm.WindowManager;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.CheckStyleConstants;
 import org.infernus.idea.checkstyle.model.ConfigurationLocation;
 import org.infernus.idea.checkstyle.util.IDEAUtilities;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableCellRenderer;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.text.MessageFormat;
@@ -23,7 +35,7 @@ import java.util.ResourceBundle;
  */
 public class PropertiesDialogue extends JDialog {
 
-    private static final Log LOG = LogFactory.getLog(PropertiesDialogue.class);
+    private static final Logger LOG = Logger.getLogger(PropertiesDialogue.class);
 
     private final PropertiesTableModel propertiesModel = new PropertiesTableModel();
     private final Project project;

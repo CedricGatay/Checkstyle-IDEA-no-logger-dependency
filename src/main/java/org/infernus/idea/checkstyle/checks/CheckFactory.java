@@ -1,8 +1,7 @@
 package org.infernus.idea.checkstyle.checks;
 
 import com.puppycrawl.tools.checkstyle.api.Configuration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
  */
 public final class CheckFactory {
 
-    private static final Log LOG = LogFactory.getLog(CheckFactory.class);
+    private static final Logger LOG = Logger.getLogger(CheckFactory.class);
 
     private static final Class[] CHECK_CLASSES = {JavadocPackageCheck.class, PackageHtmlCheck.class};
 

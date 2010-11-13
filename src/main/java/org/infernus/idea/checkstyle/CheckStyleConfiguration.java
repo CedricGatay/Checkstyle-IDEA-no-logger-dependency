@@ -2,8 +2,7 @@ package org.infernus.idea.checkstyle;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.model.ConfigurationLocation;
 import org.infernus.idea.checkstyle.model.ConfigurationLocationFactory;
 import org.infernus.idea.checkstyle.model.ConfigurationType;
@@ -12,9 +11,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.ResourceBundle;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.locks.*;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * A manager for CheckStyle plug-in configuration.
@@ -25,8 +29,7 @@ import java.util.concurrent.locks.*;
 public final class CheckStyleConfiguration {
 
     @NonNls
-    private static final Log LOG = LogFactory.getLog(CheckStyleConfiguration.class);
-
+    private static final Logger LOG = Logger.getLogger(CheckStyleConfiguration.class);
     private static final String ACTIVE_CONFIG = "active-configuration";
     private static final String CHECK_TEST_CLASSES = "check-test-classes";
     private static final String THIRDPARTY_CLASSPATH = "thirdparty-classpath";

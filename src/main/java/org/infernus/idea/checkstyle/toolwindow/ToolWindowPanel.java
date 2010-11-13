@@ -13,21 +13,30 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiFile;
 import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
 import com.puppycrawl.tools.checkstyle.api.SeverityLevel;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.infernus.idea.checkstyle.CheckStyleConstants;
 import org.infernus.idea.checkstyle.CheckStylePlugin;
 import org.infernus.idea.checkstyle.util.ExtendedProblemDescriptor;
 import org.infernus.idea.checkstyle.util.IDEAUtilities;
 
-import javax.swing.*;
+import javax.swing.Box;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.JScrollPane;
+import javax.swing.JToolBar;
+import javax.swing.JTree;
+import javax.swing.SwingUtilities;
+import javax.swing.ToolTipManager;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -50,7 +59,7 @@ public class ToolWindowPanel extends JPanel {
     /**
      * Logger for this class.
      */
-    private static final Log LOG = LogFactory.getLog(ToolWindowPanel.class);
+    private static final Logger LOG = Logger.getLogger(ToolWindowPanel.class);
 
     private static final String MAIN_ACTION_GROUP = "CheckStylePluginActions";
     private static final String TREE_ACTION_GROUP = "CheckStylePluginTreeActions";
